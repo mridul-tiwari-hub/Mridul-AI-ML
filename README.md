@@ -1,77 +1,70 @@
-# 🏢 Employee Retention Prediction App
+# 🌟 Mridul AI-ML Streamlit Portfolio
 
-A machine learning web application built with **Streamlit** that predicts whether an employee will stay or leave a company, based on HR analytics data.
+Welcome to the **Mridul AI-ML Portfolio**! This repository hosts a unified, premium multi-page Streamlit application that showcases a series of data science, analytics, and deep learning projects spanning 6 days of intensive machine learning applications.
 
----
+## 🚀 Interactive Project Directory
 
-## 🚀 Live Demo
+Navigate the sidebar in the Streamlit app to explore:
 
-Run locally:
-```bash
-streamlit run app.py
-```
-Visit: **http://localhost:8501**
+### 📅 Day 1: Data Analysis & Visualization
+*   **Project 1: Google Play Store Analytics**
+    *   Interactive Exploratory Data Analysis (EDA) on the Google Playstore apps dataset.
+    *   Filters by categories, installations, and content rating with dynamic Plotly distributions and reviews/ratings correlation analysis.
 
----
+### 📅 Day 2: Analytics & Linear Modeling
+*   **Project 2: Outlier Detection (NYC Airbnb)**
+    *   Dynamic percentile-based outlier identification. Select outlier thresholds via sliders to clean Airbnb listing prices live.
+*   **Project 3: Canada Per Capita Income Predictor**
+    *   Linear Regression model trained on Canada's historical income data. Input target years to visualize predictions on the regression trend.
 
-## 📊 Features
+### 📅 Day 3: Logistic Regression & Classification
+*   **Project 4: Employee Retention Prediction**
+    *   Logistic Regression model predicting if an employee will stay or leave based on satisfaction, salary, department, and work metrics.
 
-- **Dataset Preview** — Interactive table of 14,999 HR records
-- **Data Cleaning** — Automatically removes 3,008 duplicate rows
-- **Exploratory Data Analysis (EDA)** — Salary & Department retention charts
-- **Model Performance** — Accuracy, Confusion Matrix heatmap, Classification Report
-- **Live Prediction** — Enter employee details and get real-time retention prediction
+### 📅 Day 4: Clustering & Machine Learning
+*   **Project 5: Cat vs Dog Classifier**
+    *   Flattened image classifier model identifying uploaded cat and dog images.
+*   **Project 6: K-Means Clustering Visualizer**
+    *   Real-time clustering on the Iris dataset. Adjust the number of clusters ($K$) dynamically to explore clustering partitions and the Elbow method.
 
----
+### 📅 Day 5: Deep Learning & Computer Vision
+*   **Project 7: Gender Recognition CNN**
+    *   Convolutional Neural Network (CNN) classifying uploaded face images into Male or Female categories with confidence levels.
 
-## 🤖 Model
-
-| Detail | Value |
-|--------|-------|
-| Algorithm | Logistic Regression |
-| Dataset | HR Analytics CSV (`HR_comma_sep.csv`) |
-| Training Records | 9,592 (80% split) |
-| Test Records | 2,399 (20% split) |
-| Test Accuracy | **83.33%** |
-
----
-
-## 📁 Dataset Features
-
-| Column | Description |
-|--------|-------------|
-| `satisfaction_level` | Employee satisfaction score (0–1) |
-| `last_evaluation` | Last performance evaluation score (0–1) |
-| `number_project` | Number of projects assigned |
-| `average_montly_hours` | Avg. monthly working hours |
-| `time_spend_company` | Years at the company |
-| `Work_accident` | Had a work accident (0/1) |
-| `promotion_last_5years` | Promoted in last 5 years (0/1) |
-| `Department` | Employee department |
-| `salary` | Salary level (low/medium/high) |
-| `left` | **Target** — Did the employee leave? (0=Stayed, 1=Left) |
+### 📅 Day 6: Instance-Based Learning
+*   **Project 8: Iris Flower Classifier (KNN)**
+    *   K-Nearest Neighbors model classifying Iris species from user-adjusted sepal/petal dimensions.
 
 ---
 
-## ⚙️ Installation
+## 🛠️ Local Setup Instructions
 
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
+1.  **Clone the Repository**:
+    ```bash
+    git clone https://github.com/mridul-tiwari-hub/Mridul-AI-ML.git
+    cd Mridul-AI-ML
+    ```
+
+2.  **Create a Virtual Environment**:
+    ```bash
+    python -m venv venv
+    venv\Scripts\activate  # Linux/macOS: source venv/bin/activate
+    ```
+
+3.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Run the Streamlit Application**:
+    ```bash
+    streamlit run app.py
+    ```
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Python 3.12**
-- **Streamlit** — Web dashboard
-- **Pandas / NumPy** — Data processing
-- **Scikit-learn** — Machine learning (Logistic Regression)
-- **Matplotlib / Seaborn** — Visualization
-
----
-
-## 👤 Author
-
-**Mridul** — [GitHub](https://github.com/mridul-tiwari-hub)
+## ☁️ Streamlit Cloud Deployment
+This structure is 100% compliant with Streamlit Community Cloud. To deploy:
+1. Push to your GitHub repository.
+2. Link the repository to your [Streamlit Share account](https://share.streamlit.io/).
+3. Set the entry point script to `app.py`.
