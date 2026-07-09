@@ -31,7 +31,9 @@ st.markdown("""
 # Cache data loading
 @st.cache_data
 def load_data():
-    file_path = os.path.join("data", "googleplaystore_v2.csv")
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(current_dir) if os.path.basename(current_dir) == "pages" else current_dir
+    file_path = os.path.join(root_dir, "data", "googleplaystore_v2.csv")
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"Dataset path {file_path} not found.")
     

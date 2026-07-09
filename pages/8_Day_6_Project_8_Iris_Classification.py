@@ -56,7 +56,9 @@ st.markdown("""
 # Load Model
 @st.cache_resource
 def load_knn_model():
-    model_path = os.path.join("models", "knn_iris_model.pkl")
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(current_dir) if os.path.basename(current_dir) == "pages" else current_dir
+    model_path = os.path.join(root_dir, "models", "knn_iris_model.pkl")
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Model path {model_path} not found.")
     return joblib.load(model_path)

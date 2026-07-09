@@ -49,7 +49,9 @@ st.markdown("""
 # Load Model
 @st.cache_resource
 def load_cnn_model():
-    model_path = os.path.join("models", "gender_cnn_model.h5")
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(current_dir) if os.path.basename(current_dir) == "pages" else current_dir
+    model_path = os.path.join(root_dir, "models", "gender_cnn_model.h5")
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Model path {model_path} not found.")
     return tf.keras.models.load_model(model_path)

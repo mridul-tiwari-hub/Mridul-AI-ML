@@ -32,7 +32,9 @@ st.markdown("""
 # Load data
 @st.cache_data
 def load_data():
-    file_path = os.path.join("data", "canada_per_capita_income.csv")
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(current_dir) if os.path.basename(current_dir) == "pages" else current_dir
+    file_path = os.path.join(root_dir, "data", "canada_per_capita_income.csv")
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"Dataset path {file_path} not found.")
     df = pd.read_csv(file_path)
