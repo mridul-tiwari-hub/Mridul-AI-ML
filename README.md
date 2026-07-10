@@ -38,16 +38,10 @@ Navigate the sidebar in the Streamlit app to explore:
     *   K-Nearest Neighbors model classifying Iris species from user-adjusted sepal/petal dimensions.
 *   **[Project 11: COVID-19 Chest X-Ray Detector](https://mridul-ai-ml-9rmzd5sch3fbqi5mvxdftj.streamlit.app/)**
     *   A deep learning CNN model trained on chest scans to classify COVID-19 vs Normal status.
-*   **[Project 12: Male/Female Eye Classifier](./Day_6_Project_12_Eye_Classifier/)**
-    *   A CNN model identifying eye gender from cropped eye images.
 
 ### 📅 Day 7: Large Language Models & RAG Chatbots
-*   **[Project 9: Custom AI Assistant (OpenAI GPT-4o)](./Day_7_Project_9_AI_Assistant/)**
-    *   A ChatGPT-like custom assistant powered by OpenAI APIs. Set custom personalities, temperature parameters, and query the assistant securely.
 *   **[Project 13: Samsung Washing Machine Assistant (RAG)](https://mridul-ai-ml-guwzosyqnj7cgfxmdye7wu.streamlit.app/)**
     *   An assistant chatbot that utilizes LangChain and Chroma vector store to answer queries from the official Samsung Washing Machine HTML manual.
-*   **[Project 14: Star Health Insurance Assistant (RAG)](./Day_7_Project_14_Star_Health_RAG/)**
-    *   A customer service assistant running RAG over Star Health insurance policy documents to query claims, covers, and exclusions.
 
 ---
 
