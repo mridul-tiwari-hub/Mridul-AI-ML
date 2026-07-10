@@ -98,5 +98,5 @@ if model is not None:
         col1.metric("👩 Female Probability", f"{female_prob:.1f}%")
         col2.metric("👨 Male Probability", f"{male_prob:.1f}%")
         
-        st.progress(female_prob / 100.0, text=f"Female Probability: {female_prob:.1f}%")
-        st.progress(male_prob / 100.0, text=f"Male Probability: {male_prob:.1f}%")
+        st.progress(float(np.clip(female_prob / 100.0, 0.0, 1.0)), text=f"Female Probability: {female_prob:.1f}%")
+        st.progress(float(np.clip(male_prob / 100.0, 0.0, 1.0)), text=f"Male Probability: {male_prob:.1f}%")
