@@ -61,7 +61,14 @@ st.markdown("""
 # Load Pre-trained Model
 # -----------------------------------
 base_dir = os.path.dirname(os.path.abspath(__file__))
-root_dir = os.path.dirname(base_dir) if os.path.basename(base_dir) == "pages" else base_dir
+root_dir = base_dir
+while root_dir:
+    if os.path.exists(os.path.join(root_dir, "models")):
+        break
+    parent = os.path.dirname(root_dir)
+    if parent == root_dir:
+        break
+    root_dir = parent
 model_path = os.path.join(root_dir, "models", "covid_model.keras")
 
 @st.cache_resource
