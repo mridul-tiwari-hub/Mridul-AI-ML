@@ -1,6 +1,6 @@
 # 🌟 Mridul AI-ML Streamlit Portfolio
 
-Welcome to the **Mridul AI-ML Portfolio**! This repository hosts a unified, premium multi-page Streamlit application that showcases a series of data science, analytics, and deep learning projects spanning 7 days of intensive machine learning applications.
+Welcome to the **Mridul AI-ML Portfolio**! This repository hosts a unified, premium multi-page Streamlit application that showcases a series of data science, analytics, and deep learning projects spanning 10 days of intensive machine learning applications.
 
 ## 🚀 Interactive Project Directory
 
