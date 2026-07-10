@@ -66,8 +66,10 @@ def load_data():
 
     df['Size'] = df['Size'].apply(clean_size)
     
-    # Drop records that ended up with crucial null values during parsing
-    df = df.dropna(subset=['Size', 'Installs', 'Price', 'Reviews'])
+    # Only drop rows missing critical columns (keep Size=NaN for 'Varies with device' apps)
+    df = df.dropna(subset=['Installs', 'Reviews', 'Rating'])
+    # Fill NaN prices with 0 (free apps often missing price)
+    df['Price'] = df['Price'].fillna(0)
     return df
 
 try:
@@ -90,13 +92,18 @@ try:
         filtered_df = filtered_df[filtered_df['Category'] == selected_category]
     if selected_type != 'All':
         filtered_df = filtered_df[filtered_df['Type'] == selected_type]
+
+    # Safety check
+    if len(filtered_df) == 0:
+        st.warning("⚠️ No apps match the current filter settings. Please adjust the filters.")
+        st.stop()
         
     # KPI displays
     st.subheader("💡 Key Metrics")
     kpi1, kpi2, kpi3, kpi4 = st.columns(4)
     kpi1.metric("Apps Count", f"{len(filtered_df):,}")
     kpi2.metric("Average Rating", f"{filtered_df['Rating'].mean():.2f} ⭐")
-    kpi3.metric("Total Reviews Recieved", f"{filtered_df['Reviews'].sum():,.0f}")
+    kpi3.metric("Total Reviews Received", f"{int(filtered_df['Reviews'].sum()):,}")
     kpi4.metric("Avg Price", f"${filtered_df['Price'].mean():.2f}")
     
     st.write("---")
