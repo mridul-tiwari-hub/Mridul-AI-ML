@@ -32,8 +32,5 @@ plore:
    
 
 
-## ☁️ Streamlit Cloud Deployment
-This structure is 100% compliant with Streamlit Community Cloud. To deploy:
-1. Push to your GitHub repository.
-2. Link the repository to your [Streamlit Share account](https://share.streamlit.io/).
+
 
