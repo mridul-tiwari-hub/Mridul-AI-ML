@@ -1,7 +1,9 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-import joblib
+import tensorflow as tf
+from tensorflow.keras.models import load_model
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 import os
 
 # Page Config
@@ -42,25 +44,33 @@ st.markdown("""
 </style>
 <div class="header-box">
     <h2>🐱 Project 5: Cat vs Dog Image Classifier</h2>
-    <p>Upload an image to predict whether it is a Cat or a Dog. The image is flattened and run through a trained classification model.</p>
+    <p>Upload an image to predict whether it is a Cat or a Dog using a Transfer Learning Convolutional Neural Network (CNN).</p>
 </div>
 """, unsafe_allow_html=True)
 
 # Load Model
 @st.cache_resource
-def load_model():
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    root_dir = os.path.dirname(current_dir) if os.path.basename(current_dir) == "pages" else current_dir
-    model_path = os.path.join(root_dir, "models", "cat_dog_model.pkl")
+def load_cat_dog_model():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = base_dir
+    while root_dir:
+        if os.path.exists(os.path.join(root_dir, "models")):
+            break
+        parent = os.path.dirname(root_dir)
+        if parent == root_dir:
+            break
+        root_dir = parent
+    model_path = os.path.join(root_dir, "models", "cat_dog_model.h5")
     if not os.path.exists(model_path):
-        raise FileNotFoundError(f"Model path {model_path} not found.")
-    return joblib.load(model_path)
+        return None
+    return load_model(model_path)
 
-try:
-    model = load_model()
-    
+model = load_cat_dog_model()
+
+if model is None:
+    st.error("❌ Model file not found. Please verify `cat_dog_model.h5` exists in the `models/` directory.")
+else:
     IMG_SIZE = 64
-    classes = ['Cat', 'Dog']
 
     # Upload Image
     uploaded_file = st.file_uploader(
@@ -77,33 +87,34 @@ try:
         img_rgb = img.convert("RGB")
         img_resized = img_rgb.resize((IMG_SIZE, IMG_SIZE))
         
-        # Convert RGB to BGR (to match cv2 format used during training)
-        img_bgr = np.array(img_resized)[:, :, ::-1]
-        
-        # Flatten and normalize
-        features = img_bgr.flatten().reshape(1, -1) / 255.0
+        # Convert to float array and preprocess matching MobileNetV2
+        img_array = np.array(img_resized, dtype=np.float32)
+        img_preprocessed = preprocess_input(img_array)
+        img_batch = np.expand_dims(img_preprocessed, axis=0)
         
         # Prediction
-        pred_class = model.predict(features)[0]
-        pred_prob = model.predict_proba(features)[0]
-        
-        cat_prob = pred_prob[0] * 100
-        dog_prob = pred_prob[1] * 100
-        
-        # Output display
-        if pred_class == 0:
-            st.markdown(f'<div class="result-text cat-result">🐱 Predicted: Cat ({cat_prob:.1f}% confidence)</div>', unsafe_allow_html=True)
-        else:
-            st.markdown(f'<div class="result-text dog-result">🐶 Predicted: Dog ({dog_prob:.1f}% confidence)</div>', unsafe_allow_html=True)
+        with st.spinner("Analyzing image..."):
+            pred_prob = float(model.predict(img_batch)[0][0])
             
-        st.write("---")
-        st.subheader("Probability Distribution:")
-        col1, col2 = st.columns(2)
-        col1.metric("🐱 Cat Probability", f"{cat_prob:.1f}%")
-        col2.metric("🐶 Dog Probability", f"{dog_prob:.1f}%")
-        
-        st.progress(cat_prob / 100.0, text=f"Cat Probability: {cat_prob:.1f}%")
-        st.progress(dog_prob / 100.0, text=f"Dog Probability: {dog_prob:.1f}%")
-
-except Exception as e:
-    st.error(f"Error loading or running the Cat vs Dog model: {e}")
+            # Squeeze output to ensure it stays in bounds [0, 1]
+            pred_prob = np.clip(pred_prob, 0.0, 1.0)
+            
+            dog_prob = pred_prob * 100
+            cat_prob = (1.0 - pred_prob) * 100
+            
+            # Output display
+            if pred_prob <= 0.5:
+                confidence = cat_prob
+                st.markdown(f'<div class="result-text cat-result">🐱 Predicted: Cat ({confidence:.1f}% confidence)</div>', unsafe_allow_html=True)
+            else:
+                confidence = dog_prob
+                st.markdown(f'<div class="result-text dog-result">🐶 Predicted: Dog ({confidence:.1f}% confidence)</div>', unsafe_allow_html=True)
+                
+            st.write("---")
+            st.subheader("Probability Distribution:")
+            col1, col2 = st.columns(2)
+            col1.metric("🐱 Cat Probability", f"{cat_prob:.1f}%")
+            col2.metric("🐶 Dog Probability", f"{dog_prob:.1f}%")
+            
+            st.progress(cat_prob / 100.0, text=f"Cat Probability: {cat_prob:.1f}%")
+            st.progress(dog_prob / 100.0, text=f"Dog Probability: {dog_prob:.1f}%")
