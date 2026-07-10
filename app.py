@@ -163,6 +163,32 @@ with col1:
     </div>
     """, unsafe_allow_html=True)
 
+    st.write("") # Spacer
+
+    st.markdown("""
+    <div class="project-card">
+        <span class="day-badge">Day 6</span>
+        <div class="project-title">🩻 Project 11: COVID-19 Chest X-Ray Detector</div>
+        <p class="project-desc">
+            A deep learning CNN model classifying chest X-Rays as COVID-19 or normal. 
+            Preprocesses medical scans and displays visual predictions with confidence indicators.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.write("") # Spacer
+
+    st.markdown("""
+    <div class="project-card">
+        <span class="day-badge">Day 7</span>
+        <div class="project-title">💧 Project 13: Samsung Washing Machine Assistant (RAG)</div>
+        <p class="project-desc">
+            A technical support chatbot using a LangChain RAG pipeline to answer user questions 
+            directly based on details from the official Samsung Washing Machine manual.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
 with col2:
     st.markdown("""
     <div class="project-card">
@@ -210,6 +236,45 @@ with col2:
         <p class="project-desc">
             A K-Nearest Neighbors (KNN) model classifying Iris flower species from sepal/petal dimensions. 
             Includes slider controls and live probability gauges.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.write("") # Spacer
+
+    st.markdown("""
+    <div class="project-card">
+        <span class="day-badge">Day 3</span>
+        <div class="project-title">🏠 Project 10: Insurance Sales Predictor</div>
+        <p class="project-desc">
+            A Logistic Regression model predicting customer purchase likelihood based on age. 
+            Plots the fitted sigmoid S-curve alongside actual data points.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.write("") # Spacer
+
+    st.markdown("""
+    <div class="project-card">
+        <span class="day-badge">Day 6</span>
+        <div class="project-title">👁️ Project 12: Male/Female Eye Classifier</div>
+        <p class="project-desc">
+            A custom-trained CNN classification model predicting eye gender (Male/Female) 
+            from cropped close-up eye images.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.write("") # Spacer
+
+    st.markdown("""
+    <div class="project-card">
+        <span class="day-badge">Day 7</span>
+        <div class="project-title">🏥 Project 14: Star Health Insurance Assistant (RAG)</div>
+        <p class="project-desc">
+            A customer service RAG chatbot powered by OpenAI, trained to answer queries 
+            concerning Star Health policy coverages, exclusions, and claims.
         </p>
     </div>
     """, unsafe_allow_html=True)

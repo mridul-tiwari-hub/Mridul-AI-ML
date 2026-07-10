@@ -20,6 +20,8 @@ Navigate the sidebar in the Streamlit app to explore:
 ### 📅 Day 3: Logistic Regression & Classification
 *   **Project 4: Employee Retention Prediction**
     *   Logistic Regression model predicting if an employee will stay or leave based on satisfaction, salary, department, and work metrics.
+*   **Project 10: Insurance Sales Predictor**
+    *   Logistic Regression model predicting customer purchase likelihood based on age. Shows interactive Plotly sigmoid S-curve overlaying actual data.
 
 ### 📅 Day 4: Clustering & Machine Learning
 *   **Project 5: Cat vs Dog Classifier**
@@ -31,13 +33,21 @@ Navigate the sidebar in the Streamlit app to explore:
 *   **Project 7: Gender Recognition CNN**
     *   Convolutional Neural Network (CNN) classifying uploaded face images into Male or Female categories with confidence levels.
 
-### 📅 Day 6: Instance-Based Learning
+### 📅 Day 6: Instance-Based & Deep Learning
 *   **Project 8: Iris Flower Classifier (KNN)**
     *   K-Nearest Neighbors model classifying Iris species from user-adjusted sepal/petal dimensions.
+*   **Project 11: COVID-19 Chest X-Ray Detector**
+    *   A deep learning CNN model trained on chest scans to classify COVID-19 vs Normal status.
+*   **Project 12: Male/Female Eye Classifier**
+    *   A CNN model identifying eye gender from cropped eye images.
 
-### 📅 Day 7: Large Language Models (LLMs)
+### 📅 Day 7: Large Language Models & RAG Chatbots
 *   **Project 9: Custom AI Assistant (OpenAI GPT-4o)**
     *   A ChatGPT-like custom assistant powered by OpenAI APIs. Set custom personalities, temperature parameters, and query the assistant securely.
+*   **Project 13: Samsung Washing Machine Assistant (RAG)**
+    *   An assistant chatbot that utilizes LangChain and Chroma vector store to answer queries from the official Samsung Washing Machine HTML manual.
+*   **Project 14: Star Health Insurance Assistant (RAG)**
+    *   A customer service assistant running RAG over Star Health insurance policy documents to query claims, covers, and exclusions.
 
 ---
 
