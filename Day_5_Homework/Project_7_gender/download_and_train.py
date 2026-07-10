@@ -4,6 +4,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers, models
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import shutil
 
 # Set paths
@@ -21,7 +22,7 @@ if os.path.exists(train_female_dir):
 os.makedirs(train_male_dir, exist_ok=True)
 os.makedirs(train_female_dir, exist_ok=True)
 
-# 20 Unique Male Face IDs from Unsplash
+# 20 Unique Male Face IDs
 male_ids = [
     "photo-1507003211169-0a1dd7228f2d",
     "photo-1500648767791-00dcc994a43e",
@@ -45,7 +46,7 @@ male_ids = [
     "photo-1542156822-6924d1a71aba"
 ]
 
-# 20 Unique Female Face IDs from Unsplash
+# 20 Unique Female Face IDs
 female_ids = [
     "photo-1494790108377-be9c29b29330",
     "photo-1438761681033-6461ffad8d80",
@@ -66,7 +67,7 @@ female_ids = [
     "photo-1509305717901-817478657471",
     "photo-1554151228-14d9def656e4",
     "photo-1484186139897-d5fc6b908812",
-    "photo-1485178575877-1a13bf489fea"
+    "photo-1524250502761-1ac6f2e30d43"
 ]
 
 IMG_SIZE = 150
@@ -91,8 +92,8 @@ for i, photo_id in enumerate(female_ids):
 
 print("Dataset generated successfully!")
 
-# Define Transfer Learning CNN Model
-def create_transfer_model():
+# Define Model with Frozen Base
+def create_frozen_model():
     base_model = tf.keras.applications.MobileNetV2(
         input_shape=(IMG_SIZE, IMG_SIZE, 3),
         include_top=False,
@@ -108,10 +109,14 @@ def create_transfer_model():
         layers.Dense(1, activation='sigmoid')
     ])
     
-    model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    model.compile(
+        optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
+        loss='binary_crossentropy',
+        metrics=['accuracy']
+    )
     return model
 
-# Set up generators with proper MobileNetV2 preprocessing [-1, 1]
+# Set up generators
 train_datagen = ImageDataGenerator(
     preprocessing_function=tf.keras.applications.mobilenet_v2.preprocess_input,
     rotation_range=20,
@@ -129,9 +134,9 @@ train_generator = train_datagen.flow_from_directory(
 )
 
 # Train the model
-model = create_transfer_model()
-print("Training transfer learning model with proper preprocessing...")
-model.fit(train_generator, epochs=20, steps_per_epoch=len(train_generator))
+model = create_frozen_model()
+print("Training transfer learning model with fully frozen base for 50 epochs...")
+model.fit(train_generator, epochs=50, steps_per_epoch=len(train_generator))
 
 # Save model locally
 local_model_path = os.path.join(base_dir, "gender_cnn_model.h5")
@@ -150,5 +155,25 @@ for dest in dest_paths:
     os.makedirs(dest_dir, exist_ok=True)
     shutil.copy2(local_model_path, dest)
     print(f"Copied model to: {dest}")
+
+# Run generalization check on unseen test photos
+print("\n--- Running Generalization Verification ---")
+test_dir = os.path.join(base_dir, "test_generalization")
+test_images = {
+    "new_male_0.jpg": "male",
+    "new_male_1.jpg": "male",
+    "new_female_0.jpg": "female"
+}
+
+for img_name, label in test_images.items():
+    img_path = os.path.join(test_dir, img_name)
+    if os.path.exists(img_path):
+        img = load_img(img_path, target_size=(150, 150))
+        img_array = tf.keras.applications.mobilenet_v2.preprocess_input(img_to_array(img))
+        img_batch = np.expand_dims(img_array, axis=0)
+        
+        pred = model.predict(img_batch, verbose=0)[0][0]
+        pred_label = "male" if pred >= 0.5 else "female"
+        print(f"Test File: {img_name} | Prob (Male): {pred:.4f} | Prediction: {pred_label} | Expected: {label}")
 
 print("All tasks completed successfully!")
