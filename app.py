@@ -150,6 +150,19 @@ with col1:
     </div>
     """, unsafe_allow_html=True)
 
+    st.write("") # Spacer
+
+    st.markdown("""
+    <div class="project-card">
+        <span class="day-badge">Day 7</span>
+        <div class="project-title">🤖 Project 9: Custom AI Assistant</div>
+        <p class="project-desc">
+            A ChatGPT-like custom assistant powered by OpenAI GPT models. 
+            Configure personas, adjust parameters, and paste your API key to test.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
 with col2:
     st.markdown("""
     <div class="project-card">
@@ -203,4 +216,4 @@ with col2:
 
 # Footer info
 st.markdown("---")
-st.caption("Developed by Mridul | Streamlit Deployment Hub | Day 1 to Day 6 Projects")
+st.caption("Developed by Mridul | Streamlit Deployment Hub | Day 1 to Day 7 Projects")

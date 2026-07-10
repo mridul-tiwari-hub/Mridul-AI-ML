@@ -1,6 +1,6 @@
 # 🌟 Mridul AI-ML Streamlit Portfolio
 
-Welcome to the **Mridul AI-ML Portfolio**! This repository hosts a unified, premium multi-page Streamlit application that showcases a series of data science, analytics, and deep learning projects spanning 6 days of intensive machine learning applications.
+Welcome to the **Mridul AI-ML Portfolio**! This repository hosts a unified, premium multi-page Streamlit application that showcases a series of data science, analytics, and deep learning projects spanning 7 days of intensive machine learning applications.
 
 ## 🚀 Interactive Project Directory
 
@@ -34,6 +34,10 @@ Navigate the sidebar in the Streamlit app to explore:
 ### 📅 Day 6: Instance-Based Learning
 *   **Project 8: Iris Flower Classifier (KNN)**
     *   K-Nearest Neighbors model classifying Iris species from user-adjusted sepal/petal dimensions.
+
+### 📅 Day 7: Large Language Models (LLMs)
+*   **Project 9: Custom AI Assistant (OpenAI GPT-4o)**
+    *   A ChatGPT-like custom assistant powered by OpenAI APIs. Set custom personalities, temperature parameters, and query the assistant securely.
 
 ---
 
