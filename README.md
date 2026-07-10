@@ -7,46 +7,46 @@ Welcome to the **Mridul AI-ML Portfolio**! This repository hosts a unified, prem
 Navigate the sidebar in the Streamlit app to explore:
 
 ### 📅 Day 1: Data Analysis & Visualization
-*   **Project 1: Google Play Store Analytics**
+*   **[Project 1: Google Play Store Analytics](https://appplaystore-ei7mwj3hiyrzezrwe4svbr.streamlit.app/)**
     *   Interactive Exploratory Data Analysis (EDA) on the Google Playstore apps dataset.
     *   Filters by categories, installations, and content rating with dynamic Plotly distributions and reviews/ratings correlation analysis.
 
 ### 📅 Day 2: Analytics & Linear Modeling
-*   **Project 2: Outlier Detection (NYC Airbnb)**
+*   **[Project 2: Outlier Detection (NYC Airbnb)](https://outliers-percentile-hnozvsxjlixptinvhrgkvf.streamlit.app/)**
     *   Dynamic percentile-based outlier identification. Select outlier thresholds via sliders to clean Airbnb listing prices live.
-*   **Project 3: Canada Per Capita Income Predictor**
+*   **[Project 3: Canada Per Capita Income Predictor](https://linearregressiondevploment-jketybx5jdsrpnk6ethkzp.streamlit.app/)**
     *   Linear Regression model trained on Canada's historical income data. Input target years to visualize predictions on the regression trend.
 
 ### 📅 Day 3: Logistic Regression & Classification
-*   **Project 4: Employee Retention Prediction**
+*   **[Project 4: Employee Retention Prediction](https://employeeretentionanalysis-ltntvwuppqyvchchwatmnz.streamlit.app/)**
     *   Logistic Regression model predicting if an employee will stay or leave based on satisfaction, salary, department, and work metrics.
-*   **Project 10: Insurance Sales Predictor**
+*   **[Project 10: Insurance Sales Predictor](https://logistic-regression-ep9yaxnba8r93zww5xszls.streamlit.app/)**
     *   Logistic Regression model predicting customer purchase likelihood based on age. Shows interactive Plotly sigmoid S-curve overlaying actual data.
 
 ### 📅 Day 4: Clustering & Machine Learning
-*   **Project 5: Cat vs Dog Classifier**
+*   **[Project 5: Cat vs Dog Classifier](https://catdogimageclassifer-jvmrxkwbudnsbq2ebkfakv.streamlit.app/)**
     *   Flattened image classifier model identifying uploaded cat and dog images.
-*   **Project 6: K-Means Clustering Visualizer**
+*   **[Project 6: K-Means Clustering Visualizer](https://k-means-classifier-a6yxzfpaanuvwej7uhmgbc.streamlit.app/)**
     *   Real-time clustering on the Iris dataset. Adjust the number of clusters ($K$) dynamically to explore clustering partitions and the Elbow method.
 
 ### 📅 Day 5: Deep Learning & Computer Vision
-*   **Project 7: Gender Recognition CNN**
+*   **[Project 7: Gender Recognition CNN](https://male-female-classifier-v6vuakpatxeghdbhtmmspp.streamlit.app/)**
     *   Convolutional Neural Network (CNN) classifying uploaded face images into Male or Female categories with confidence levels.
 
 ### 📅 Day 6: Instance-Based & Deep Learning
-*   **Project 8: Iris Flower Classifier (KNN)**
+*   **[Project 8: Iris Flower Classifier (KNN)](https://iris-flower-clustering-using-k-means-hxurs8ibgznh6ubjvheavz.streamlit.app/)**
     *   K-Nearest Neighbors model classifying Iris species from user-adjusted sepal/petal dimensions.
-*   **Project 11: COVID-19 Chest X-Ray Detector**
+*   **[Project 11: COVID-19 Chest X-Ray Detector](https://dmtede9rnfyehpdpyhrzyx.streamlit.app/)**
     *   A deep learning CNN model trained on chest scans to classify COVID-19 vs Normal status.
-*   **Project 12: Male/Female Eye Classifier**
+*   **[Project 12: Male/Female Eye Classifier](./Day_6_Project_12_Eye_Classifier/)**
     *   A CNN model identifying eye gender from cropped eye images.
 
 ### 📅 Day 7: Large Language Models & RAG Chatbots
-*   **Project 9: Custom AI Assistant (OpenAI GPT-4o)**
+*   **[Project 9: Custom AI Assistant (OpenAI GPT-4o)](./Day_7_Project_9_AI_Assistant/)**
     *   A ChatGPT-like custom assistant powered by OpenAI APIs. Set custom personalities, temperature parameters, and query the assistant securely.
-*   **Project 13: Samsung Washing Machine Assistant (RAG)**
+*   **[Project 13: Samsung Washing Machine Assistant (RAG)](https://6ghhhbmmdyjauxf6ago7an.streamlit.app/)**
     *   An assistant chatbot that utilizes LangChain and Chroma vector store to answer queries from the official Samsung Washing Machine HTML manual.
-*   **Project 14: Star Health Insurance Assistant (RAG)**
+*   **[Project 14: Star Health Insurance Assistant (RAG)](./Day_7_Project_14_Star_Health_RAG/)**
     *   A customer service assistant running RAG over Star Health insurance policy documents to query claims, covers, and exclusions.
 
 ---
