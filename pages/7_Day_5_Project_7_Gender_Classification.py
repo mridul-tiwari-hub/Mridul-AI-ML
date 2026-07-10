@@ -77,7 +77,7 @@ if model is not None:
         # Preprocess Image to match model's expected shape: (1, 150, 150, 3)
         img_rgb = img.convert("RGB")
         img_resized = img_rgb.resize((150, 150))
-        img_array = np.array(img_resized) / 255.0
+        img_array = tf.keras.applications.mobilenet_v2.preprocess_input(np.array(img_resized, dtype=np.float32))
         img_batch = np.expand_dims(img_array, axis=0)
         
         # Prediction

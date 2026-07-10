@@ -12,7 +12,7 @@ dataset_dir = os.path.join(base_dir, "gender_dataset")
 train_male_dir = os.path.join(dataset_dir, "train", "male")
 train_female_dir = os.path.join(dataset_dir, "train", "female")
 
-# Recreate folders to clear synthetic images
+# Recreate folders to clear old images
 if os.path.exists(train_male_dir):
     shutil.rmtree(train_male_dir)
 if os.path.exists(train_female_dir):
@@ -21,7 +21,7 @@ if os.path.exists(train_female_dir):
 os.makedirs(train_male_dir, exist_ok=True)
 os.makedirs(train_female_dir, exist_ok=True)
 
-# List of Unsplash Photo IDs representing high-quality cropped human faces
+# 20 Unique Male Face IDs from Unsplash
 male_ids = [
     "photo-1507003211169-0a1dd7228f2d",
     "photo-1500648767791-00dcc994a43e",
@@ -34,9 +34,18 @@ male_ids = [
     "photo-1519085360753-af0119f7cbe7",
     "photo-1489980508314-941910ded1f4",
     "photo-1506863530036-1efeddceb993",
-    "photo-1531427186611-ecfd6d936c79"
+    "photo-1531427186611-ecfd6d936c79",
+    "photo-1503443207922-dff7d543ee0e",
+    "photo-1534308983496-4fabb1a015ee",
+    "photo-1568602471122-7832951cc4c5",
+    "photo-1500048993953-d23a436266cf",
+    "photo-1513956589380-bad6acb9b9d4",
+    "photo-1507153079406-79046180b3fa",
+    "photo-1519345182560-3f2917c472ef",
+    "photo-1542156822-6924d1a71aba"
 ]
 
+# 20 Unique Female Face IDs from Unsplash
 female_ids = [
     "photo-1494790108377-be9c29b29330",
     "photo-1438761681033-6461ffad8d80",
@@ -49,6 +58,14 @@ female_ids = [
     "photo-1524504388940-b1c1722653e1",
     "photo-1488426862026-3ee34a7d66df",
     "photo-1521119989659-a83eee488004",
+    "photo-1531123897727-8f129e1688ce",
+    "photo-1529626455594-4ff0802cfb7e",
+    "photo-1506919258185-6078bba55d2a",
+    "photo-1530577197743-7adf1009518b",
+    "photo-1541647376583-d1e257237598",
+    "photo-1509305717901-817478657471",
+    "photo-1554151228-14d9def656e4",
+    "photo-1484186139897-d5fc6b908812",
     "photo-1485178575877-1a13bf489fea"
 ]
 
@@ -74,30 +91,29 @@ for i, photo_id in enumerate(female_ids):
 
 print("Dataset generated successfully!")
 
-# Define the CNN using MobileNetV2 for Transfer Learning
+# Define Transfer Learning CNN Model
 def create_transfer_model():
-    # Use MobileNetV2 pre-trained on ImageNet
     base_model = tf.keras.applications.MobileNetV2(
         input_shape=(IMG_SIZE, IMG_SIZE, 3),
         include_top=False,
         weights='imagenet'
     )
-    base_model.trainable = False  # Freeze pre-trained weights
+    base_model.trainable = False
     
     model = models.Sequential([
         base_model,
         layers.GlobalAveragePooling2D(),
         layers.Dense(32, activation='relu'),
         layers.Dropout(0.2),
-        layers.Dense(1, activation='sigmoid')  # Binary classification: 0=Female, 1=Male
+        layers.Dense(1, activation='sigmoid')
     ])
     
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     return model
 
-# Setup generators with Data Augmentation
+# Set up generators with proper MobileNetV2 preprocessing [-1, 1]
 train_datagen = ImageDataGenerator(
-    rescale=1.0/255,
+    preprocessing_function=tf.keras.applications.mobilenet_v2.preprocess_input,
     rotation_range=20,
     width_shift_range=0.1,
     height_shift_range=0.1,
@@ -112,10 +128,10 @@ train_generator = train_datagen.flow_from_directory(
     class_mode='binary'
 )
 
-# Train CNN model
+# Train the model
 model = create_transfer_model()
-print("Training transfer learning model...")
-model.fit(train_generator, epochs=10, steps_per_epoch=len(train_generator))
+print("Training transfer learning model with proper preprocessing...")
+model.fit(train_generator, epochs=20, steps_per_epoch=len(train_generator))
 
 # Save model locally
 local_model_path = os.path.join(base_dir, "gender_cnn_model.h5")
