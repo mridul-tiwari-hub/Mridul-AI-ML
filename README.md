@@ -1,49 +1,54 @@
 # 🌟 Mridul AI-ML Streamlit Portfolio
 
-Welcome to the **Mridul AI-ML Portfolio**! This repository hosts a unified, premium multi-page Streamlit application that showcases a series of data science, analytics, and deep learning projects spanning 10 days of intensive machine learning applications.
+Welcome to the **Mridul AI-ML Portfolio**! This repository hosts a unified, premium multi-page Streamlit application showcasing data science, analytics, and deep learning projects built over 7 days of intensive machine learning training.
 
-## 🚀 Interactive Project Directory
+🔗 **Main Portfolio Dashboard:** [https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/)
 
-Navigate the sidebar in the Streamlit app to explore:
+---
+
+## 🚀 Project Directory
 
 ### 📅 Day 1: Data Analysis & Visualization
-*   **[Project 1: Google Play Store Analytics](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_1_project_1_data_visualisation)**
-    *   Interactive Exploratory Data Analysis (EDA) on the Google Playstore apps dataset.
-    *   Filters by categories, installations, and content rating with dynamic Plotly distributions and reviews/ratings correlation analysis.
+| Project | Description | Live Link |
+|---------|-------------|-----------|
+| **Project 1: Google Play Store Analytics** | Interactive EDA dashboard on 9,000+ Playstore apps. Filter categories, view ratings distributions and correlations. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/) |
 
 ### 📅 Day 2: Analytics & Linear Modeling
-*   **[Project 2: Outlier Detection (NYC Airbnb)](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_2_project_2_outliers)**
-    *   Dynamic percentile-based outlier identification. Select outlier thresholds via sliders to clean Airbnb listing prices live.
-*   **[Project 3: Canada Per Capita Income Predictor](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_2_project_3_regression)**
-    *   Linear Regression model trained on Canada's historical income data. Input target years to visualize predictions on the regression trend.
+| Project | Description | Live Link |
+|---------|-------------|-----------|
+| **Project 2: Outlier Detection (NYC Airbnb)** | Percentile-based outlier detection using NYC Airbnb dataset. Tune sliders to detect and remove price outliers. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_2_Project_2_Outliers) |
+| **Project 3: Canada Per Capita Income Predictor** | Linear Regression model predicting Canada's income trajectory. Input a future year to get predictions. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_2_Project_3_Regression) |
 
 ### 📅 Day 3: Logistic Regression & Classification
-*   **[Project 4: Employee Retention Prediction](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_3_project_4_logistic_regression)**
-    *   Logistic Regression model predicting if an employee will stay or leave based on satisfaction, salary, department, and work metrics.
-*   **[Project 10: Insurance Sales Predictor](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_3_project_10_insurance_sales_prediction)**
-    *   Logistic Regression model predicting customer purchase likelihood based on age. Shows interactive Plotly sigmoid S-curve overlaying actual data.
-*   **[Project 15: House Price Prediction (Linear Regression)](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_3_project_6_house_prediction)**
-    *   Simple linear regression model predicting house price from square footage area.
+| Project | Description | Live Link |
+|---------|-------------|-----------|
+| **Project 4: Employee Retention Prediction** | Logistic Regression predicting employee turnover from HR metrics. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_3_Project_4_Logistic_Regression) |
+| **Project 10: Insurance Sales Predictor** | Logistic Regression estimating insurance purchase likelihood from age. Shows an interactive sigmoid S-curve. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_3_Project_10_Insurance_Sales_Prediction) |
+| **Project 15: House Price Prediction** | Linear Regression model predicting house prices from square footage area. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_3_Project_6_House_Prediction) |
 
 ### 📅 Day 4: Clustering & Machine Learning
-*   **[Project 5: Cat vs Dog Classifier](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_4_project_5_cat_vs_dog)**
-    *   Flattened image classifier model identifying uploaded cat and dog images.
-*   **[Project 6: K-Means Clustering Visualizer](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_4_project_6_kmeans)**
-    *   Real-time clustering on the Iris dataset. Adjust the number of clusters ($K$) dynamically to explore clustering partitions and the Elbow method.
+| Project | Description | Live Link |
+|---------|-------------|-----------|
+| **Project 5: Cat vs Dog Classifier** | ML image classifier distinguishing cats from dogs from uploaded images. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_4_Project_5_Cat_vs_Dog) |
+| **Project 6: K-Means Clustering Visualizer** | Real-time K-Means clustering on the Iris dataset. Adjust K dynamically and view the Elbow Plot. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_4_Project_6_KMeans) |
 
 ### 📅 Day 5: Deep Learning & Computer Vision
-*   **[Project 7: Gender Recognition CNN](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_5_project_7_gender_classification)**
-    *   Convolutional Neural Network (CNN) classifying uploaded face images into Male or Female categories with confidence levels.
+| Project | Description | Live Link |
+|---------|-------------|-----------|
+| **Project 7: Gender Recognition CNN** | Convolutional Neural Network (CNN) classifying uploaded face images into Male or Female categories. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_5_Project_7_Gender_Classification) |
 
-### 📅 Day 6: Instance-Based & Deep Learning
-*   **[Project 8: Iris Flower Classifier (KNN)](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_6_project_8_iris_classification)**
-    *   K-Nearest Neighbors model classifying Iris species from user-adjusted sepal/petal dimensions.
-*   **[Project 11: COVID-19 Chest X-Ray Detector](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_6_project_11_covid19_detector)**
-    *   A deep learning CNN model trained on chest scans to classify COVID-19 vs Normal status.
+### 📅 Day 6: Instance-Based Learning & Deep Learning
+| Project | Description | Live Link |
+|---------|-------------|-----------|
+| **Project 8: Iris Flower Classifier (KNN)** | K-Nearest Neighbors model classifying Iris species. Adjust sepal/petal dimensions with sliders. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_6_Project_8_Iris_Classification) |
+| **Project 11: COVID-19 Chest X-Ray Detector** | Deep learning CNN classifying chest X-Rays as COVID-19 Positive or Normal. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_6_Project_11_Covid19_Detector) |
 
 ### 📅 Day 7: Large Language Models & RAG Chatbots
-*   **[Project 13: Samsung Washing Machine Assistant (RAG)](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_7_project_13_samsung_rag)**
-    *   An assistant chatbot that utilizes LangChain and Chroma vector store to answer queries from the official Samsung Washing Machine HTML manual.
+| Project | Description | Live Link |
+|---------|-------------|-----------|
+| **Project 9: Custom AI Assistant** | ChatGPT-style AI assistant powered by OpenAI GPT. Configure personas and API key to test. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_7_Project_9_AI_Assistant) |
+| **Project 13: Samsung Washing Machine Assistant (RAG)** | LangChain + Chroma RAG chatbot answering queries from the official Samsung manual. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_7_Project_13_Samsung_RAG) |
+| **Project 14: Star Health Insurance Assistant (RAG)** | RAG-powered customer service chatbot for Star Health policy queries. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_7_Project_14_Star_Health_RAG) |
 
 ---
 
