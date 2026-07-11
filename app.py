@@ -252,6 +252,19 @@ with col2:
         </p>
     </div>
     """, unsafe_allow_html=True)
+    
+    st.write("") # Spacer
+
+    st.markdown("""
+    <div class="project-card">
+        <span class="day-badge">Day 3</span>
+        <div class="project-title">🏠 Project 15: House Price Prediction (Linear Regression)</div>
+        <p class="project-desc">
+            A simple linear regression model predicting house prices based on square footage area.
+            Displays full dataset overview and live model intercepts/slope values.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
     st.write("") # Spacer
 
