@@ -24,7 +24,7 @@ Welcome to the **Mridul AI-ML Portfolio**! This repository hosts a unified, prem
 |---------|-------------|-----------|
 | **Project 4: Employee Retention Prediction** | Logistic Regression predicting employee turnover from HR metrics. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_3_Project_4_Logistic_Regression) |
 | **Project 10: Insurance Sales Predictor** | Logistic Regression estimating insurance purchase likelihood from age. Shows an interactive sigmoid S-curve. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_3_Project_10_Insurance_Sales_Prediction) |
-| **Project 15: House Price Prediction** | Linear Regression model predicting house prices from square footage area. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_3_Project_6_House_Prediction) |
+| **Project 15: Life Insurance Purchase Prediction** | Logistic Regression predicting life insurance purchase likelihood from age. | [▶ Open App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/Day_3_Project_6_House_Prediction) |
 
 ### 📅 Day 4: Clustering & Machine Learning
 | Project | Description | Live Link |

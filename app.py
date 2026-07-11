@@ -258,10 +258,10 @@ with col2:
     st.markdown("""
     <div class="project-card">
         <span class="day-badge">Day 3</span>
-        <div class="project-title">🏠 Project 15: House Price Prediction (Linear Regression)</div>
+        <div class="project-title">🛡️ Project 15: Life Insurance Purchase Prediction</div>
         <p class="project-desc">
-            A simple linear regression model predicting house prices based on square footage area.
-            Displays full dataset overview and live model intercepts/slope values.
+            A logistic regression model predicting whether a person will buy life insurance based on their age.
+            Displays dataset overview and live model parameter attributes.
         </p>
     </div>
     """, unsafe_allow_html=True)
