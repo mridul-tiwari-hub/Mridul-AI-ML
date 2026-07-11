@@ -12,7 +12,7 @@ Welcome to the **Mridul AI-ML Portfolio**! Below is the directory of live projec
 ### 📅 Day 3: Logistic Regression & Classification
 *   **Project 4: Employee Retention Prediction** - [Live App](https://mridul-ai-ml-on2grpqu38swbpl73iyyfc.streamlit.app/)
 *   **Project 10: Insurance Sales Predictor** - [Live App](https://mridul-ai-ml-69ja76d3gmlpzrqw64tq7r.streamlit.app/)
-*   **Project 15: Life Insurance Purchase Prediction** - [Live App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_3_project_6_house_prediction)
+*   **Project 15: House Price Predictor** - [Live App](https://mridul-ai-ml-fyhpzy7xs3gswabxppnxuf.streamlit.app/day_3_project_6_house_prediction)
 
 ### 📅 Day 4: Clustering & Machine Learning
 *   **Project 5: Cat vs Dog Classifier** - [Live App](https://mridul-ai-ml-nufyfxuvgkeup7zxyec25c.streamlit.app/)
