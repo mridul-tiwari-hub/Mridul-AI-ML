@@ -15,14 +15,14 @@ Welcome to the **Mridul AI-ML Portfolio**! Below is the directory of live projec
   
 
 ### 📅 Day 4: Clustering & Machine Learning
-*   **Project 5: Cat vs Dog Classifier** - [Live App](https://mridul-ai-ml-nufyfxuvgkeup7zxyec25c.streamlit.app/)
-*   **Project 6: K-Means Clustering Visualizer** - [Live App](https://mridul-ai-ml-vbrwolncjcjwujahofnnxz.streamlit.app/)
+*   **Project 5: Cat vs Dog Classifier** - [Live App](https://mridul-ai-ml-5drhyzpo9rdwmjncjhuzmd.streamlit.app/)
+*   **Project 6: K-Means Clustering Visualizer** - [Live App](https://mridul-ai-ml-fbm4k6zec6kcxruzmk2gix.streamlit.app/)
 
 ### 📅 Day 5: Deep Learning & Computer Vision
-*   **Project 7: Gender Recognition CNN** - [Live App](https://mridul-ai-ml-5drhyzpo9rdwmjncjhuzmd.streamlit.app/)
+*   **Project 7: Gender Recognition CNN** - [Live App](https://mridul-ai-ml-on2grpqu38swbpl73iyyfc.streamlit.app/)
 
 ### 📅 Day 6: Instance-Based & Deep Learning
-*   **Project 8: Iris Flower Classifier (KNN)** - [Live App](https://mridul-ai-ml-fbm4k6zec6kcxruzmk2gix.streamlit.app/)
+*   **Project 8: Iris Flower Classifier (KNN)** - [Live App](https://mridul-ai-ml-nufyfxuvgkeup7zxyec25c.streamlit.app/)
 *   **Project 11: COVID-19 Chest X-Ray Detector** - [Live App](https://mridul-ai-ml-9rmzd5sch3fbqi5mvxdftj.streamlit.app/)
 
 ### 📅 Day 7: Large Language Models & RAG Chatbots
